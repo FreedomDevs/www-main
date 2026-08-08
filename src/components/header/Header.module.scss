@@ -1,0 +1,393 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  width: 100%;
+
+  background: rgba(0, 11, 20, 0.78);
+  border-bottom: 1px solid rgba(214, 220, 229, 0.06);
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.container {
+  width: min(1200px, calc(100% - 40px));
+  height: 80px;
+
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+}
+
+/* ─────────────────────────────
+   Logo
+───────────────────────────── */
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+
+  flex-shrink: 0;
+
+  color: var(--white);
+  text-decoration: none;
+
+  img {
+    display: block;
+
+    width: 36px;
+    height: 36px;
+
+    border-radius: 9px;
+  }
+}
+
+.logoName {
+  color: var(--white);
+
+  font-family: var(--font-family);
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+
+  span {
+    color: var(--primary);
+    font-weight: 600;
+  }
+}
+
+/* ─────────────────────────────
+   Desktop navigation
+───────────────────────────── */
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.navLink {
+  position: relative;
+
+  color: var(--gray);
+
+  font-family: var(--font-family);
+  font-size: 14px;
+  font-weight: 500;
+
+  text-decoration: none;
+
+  transition: color 160ms ease;
+
+  &:hover {
+    color: var(--gray2);
+  }
+
+  &::after {
+    content: '';
+
+    position: absolute;
+    left: 50%;
+    bottom: -9px;
+
+    width: 0;
+    height: 2px;
+
+    border-radius: 999px;
+
+    background: var(--primary);
+
+    transform: translateX(-50%);
+
+    transition: width 180ms ease;
+  }
+
+  &:hover::after {
+    width: 14px;
+  }
+}
+
+/* ─────────────────────────────
+   Actions
+───────────────────────────── */
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+
+  flex-shrink: 0;
+}
+
+.login {
+  color: var(--gray2);
+
+  font-family: var(--font-family);
+  font-size: 14px;
+  font-weight: 500;
+
+  text-decoration: none;
+
+  transition: color 160ms ease;
+
+  &:hover {
+    color: var(--white);
+  }
+}
+
+.desktopButton {
+  display: flex;
+}
+
+/* ─────────────────────────────
+   Burger
+───────────────────────────── */
+
+.menuButton {
+  display: none;
+
+  width: 40px;
+  height: 40px;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: 1px solid rgba(214, 220, 229, 0.1);
+  border-radius: var(--radius-sm);
+
+  background: transparent;
+  color: var(--gray2);
+
+  font-size: 20px;
+
+  cursor: pointer;
+
+  transition:
+    color 160ms ease,
+    border-color 160ms ease,
+    background 160ms ease,
+    transform 160ms ease;
+
+  &:hover {
+    color: var(--white);
+
+    background: rgba(255, 51, 102, 0.06);
+    border-color: rgba(255, 51, 102, 0.2);
+  }
+}
+
+.menuButtonOpen {
+  color: var(--white);
+
+  background: rgba(255, 51, 102, 0.08);
+  border-color: rgba(255, 51, 102, 0.22);
+}
+
+/* ─────────────────────────────
+   Mobile menu
+───────────────────────────── */
+
+.mobileMenu {
+  display: none;
+}
+
+/* ─────────────────────────────
+   Tablet
+───────────────────────────── */
+
+@media (max-width: 900px) {
+  .nav {
+    gap: 20px;
+  }
+
+  .navLink {
+    &:nth-child(2) {
+      display: none;
+    }
+  }
+}
+
+/* ─────────────────────────────
+   Mobile
+───────────────────────────── */
+
+@media (max-width: 700px) {
+  .container {
+    width: calc(100% - 24px);
+    height: 68px;
+  }
+
+  .logo {
+    gap: 10px;
+
+    img {
+      width: 34px;
+      height: 34px;
+    }
+  }
+
+  .logoName {
+    font-size: 18px;
+  }
+
+  .nav,
+  .login,
+  .desktopButton {
+    display: none;
+  }
+
+  .actions {
+    gap: 10px;
+    margin-left: auto;
+  }
+
+  .menuButton {
+    display: flex;
+  }
+
+  /* ─────────────────────────
+     Mobile burger
+  ───────────────────────── */
+
+  .mobileMenu {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 12px;
+
+    display: flex;
+    flex-direction: column;
+
+    width: calc(100% - 24px);
+
+    padding: 8px;
+
+    border: 1px solid rgba(214, 220, 229, 0.08);
+    border-radius: var(--radius-md);
+
+    background: rgba(0, 11, 20, 0.96);
+
+    box-shadow:
+      0 20px 50px rgba(0, 0, 0, 0.35),
+      0 0 40px rgba(255, 51, 102, 0.04);
+
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transform: translateY(-8px);
+
+    transition:
+      opacity 180ms ease,
+      transform 180ms ease,
+      visibility 180ms ease;
+  }
+
+  .mobileMenuOpen {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+
+    transform: translateY(0);
+  }
+
+  .mobileNav {
+    display: flex;
+    flex-direction: column;
+
+    padding: 4px;
+  }
+
+  .mobileNavLink {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    min-height: 52px;
+
+    padding: 0 14px;
+
+    border-radius: var(--radius-sm);
+
+    color: var(--gray2);
+
+    font-family: var(--font-family);
+    font-size: 15px;
+    font-weight: 500;
+
+    text-decoration: none;
+
+    transition:
+      color 160ms ease,
+      background 160ms ease;
+
+    svg {
+      color: var(--gray);
+
+      font-size: 17px;
+
+      transition:
+        color 160ms ease,
+        transform 160ms ease;
+    }
+
+    &:hover {
+      color: var(--white);
+      background: rgba(255, 51, 102, 0.07);
+
+      svg {
+        color: var(--primary);
+        transform: translate(2px, -2px);
+      }
+    }
+  }
+
+  .mobileActions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    padding: 12px 4px 4px;
+    margin-top: 4px;
+
+    border-top: 1px solid rgba(214, 220, 229, 0.07);
+  }
+
+  .mobileLogin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 44px;
+
+    border-radius: var(--radius-sm);
+
+    color: var(--gray2);
+
+    font-family: var(--font-family);
+    font-size: 14px;
+    font-weight: 500;
+
+    text-decoration: none;
+
+    transition:
+      color 160ms ease,
+      background 160ms ease;
+
+    &:hover {
+      color: var(--white);
+      background: rgba(255, 255, 255, 0.04);
+    }
+  }
+}
