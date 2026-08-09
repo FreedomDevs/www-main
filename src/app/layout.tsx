@@ -11,7 +11,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'ElysiaID',
+  title: 'ElysiaCloud',
   icons: {
     icon: [
       {
