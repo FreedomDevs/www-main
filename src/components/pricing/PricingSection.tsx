@@ -73,7 +73,7 @@ export function PricingSection() {
     );
 
     // eslint-disable-next-line react-hooks/immutability
-    window.location.href = `https://t.me/mikinol0?text=${message}`;
+    window.location.href = `https://t.me/Foksfff?text=${message}`;
   };
 
   return (

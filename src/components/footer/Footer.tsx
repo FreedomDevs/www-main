@@ -12,14 +12,14 @@ const navigation = [
       { label: 'Возможности', href: '#features' },
     ],
   },
-  {
-    title: 'Ресурсы',
-    links: [
-      { label: 'Документация', href: '/docs' },
-      { label: 'Статус', href: '/status' },
-      { label: 'Поддержка', href: '/support' },
-    ],
-  },
+  // {
+  //   title: 'Ресурсы',
+  //   links: [
+  //     { label: 'Документация', href: '/docs' },
+  //     { label: 'Статус', href: '/status' },
+  //     { label: 'Поддержка', href: '/support' },
+  //   ],
+  // },
   {
     title: 'Документы',
     links: [
