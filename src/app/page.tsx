@@ -2,7 +2,7 @@ import { Hero } from '@/src/components/hero/Hero';
 import { InfrastructureSection } from '@/src/components/infrastructure/InfrastructureSection';
 import { UseCasesSection } from '@/src/components/usecases/UseCasesSection';
 import { PricingSection } from '@/src/components/pricing/PricingSection';
-import { FinalCta } from '@/src/components/cta/FinalCta';
+import { Footer } from '@/src/components/footer/Footer';
 
 export default function Home() {
   return (
@@ -11,7 +11,7 @@ export default function Home() {
       <InfrastructureSection />
       <UseCasesSection />
       <PricingSection />
-      <FinalCta />
+      <Footer />
     </>
   );
 }

@@ -67,6 +67,15 @@ export function PricingSection() {
     return () => observer.disconnect();
   }, []);
 
+  const redirectToTelegram = (planName: string) => {
+    const message = encodeURIComponent(
+      `Здравствуйте! Хочу подключить тариф ${planName}.`
+    );
+
+    // eslint-disable-next-line react-hooks/immutability
+    window.location.href = `https://t.me/mikinol0?text=${message}`;
+  };
+
   return (
     <section className={styles.section} id="pricing">
       <div className={styles.glow} />
@@ -167,6 +176,7 @@ export function PricingSection() {
                   size="md"
                   variant={plan.featured ? 'primary' : 'integrations'}
                   rightIcon={<FiArrowUpRight />}
+                  onClick={() => redirectToTelegram(plan.name)}
                 >
                   Выбрать
                 </Button>

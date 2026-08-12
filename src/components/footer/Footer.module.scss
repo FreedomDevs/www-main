@@ -1,0 +1,235 @@
+.footer {
+  position: relative;
+
+  padding: 72px 0 28px;
+
+  border-top: 1px solid rgba(214, 220, 229, 0.07);
+
+  background: rgba(0, 11, 20, 0.45);
+}
+
+.container {
+  width: min(1200px, calc(100% - 40px));
+
+  margin: 0 auto;
+}
+
+/* ─────────────────────────────
+Top
+───────────────────────────── */
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  gap: 80px;
+
+  padding-bottom: 64px;
+}
+
+/* ─────────────────────────────
+Brand
+───────────────────────────── */
+
+.brand {
+  max-width: 320px;
+}
+
+.logo {
+  display: inline-flex;
+
+  color: var(--white);
+
+  font-family: var(--font-family);
+  font-size: 20px;
+  font-weight: 700;
+
+  letter-spacing: -0.04em;
+
+  text-decoration: none;
+
+  span {
+    color: var(--primary);
+  }
+}
+
+.brand p {
+  max-width: 280px;
+
+  margin: 14px 0 22px;
+
+  color: var(--gray);
+
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.socials {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.telegramIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 14px;
+  height: 14px;
+
+  font-size: 11px;
+}
+
+.github {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+
+  color: var(--gray2);
+
+  font-size: 11px;
+  font-weight: 500;
+
+  text-decoration: none;
+
+  transition: color 160ms ease;
+
+  svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  svg:last-child {
+    width: 11px;
+    height: 11px;
+  }
+
+  &:hover {
+    color: var(--white);
+  }
+}
+
+/* ─────────────────────────────
+Navigation
+───────────────────────────── */
+
+.navigation {
+  display: flex;
+  gap: 100px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+
+  min-width: 120px;
+}
+
+.columnTitle {
+  margin-bottom: 5px;
+
+  color: var(--gray2);
+
+  font-size: 10px;
+  font-weight: 600;
+
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.link {
+  width: fit-content;
+
+  color: var(--gray);
+
+  font-size: 11px;
+
+  text-decoration: none;
+
+  transition:
+    color 160ms ease,
+    transform 160ms ease;
+
+  &:hover {
+    color: var(--white);
+
+    transform: translateX(2px);
+  }
+}
+
+/* ─────────────────────────────
+Bottom
+───────────────────────────── */
+
+.bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding-top: 22px;
+
+  border-top: 1px solid rgba(214, 220, 229, 0.06);
+
+  color: var(--gray);
+
+  font-size: 9px;
+}
+
+.made {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+
+  svg {
+    width: 10px;
+    height: 10px;
+
+    color: var(--primary);
+  }
+}
+
+/* ─────────────────────────────
+Mobile
+───────────────────────────── */
+
+@media (max-width: 700px) {
+  .footer {
+    padding: 60px 0 24px;
+  }
+
+  .container {
+    width: calc(100% - 32px);
+  }
+
+  .top {
+    flex-direction: column;
+    gap: 48px;
+
+    padding-bottom: 44px;
+  }
+
+  .navigation {
+    gap: 60px;
+  }
+
+  .bottom {
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  .made {
+    width: 100%;
+  }
+}
+
+@media (max-width: 420px) {
+  .navigation {
+    gap: 35px;
+  }
+
+  .column {
+    min-width: 100px;
+  }
+}

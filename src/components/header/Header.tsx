@@ -11,20 +11,16 @@ import { Button } from '@/src/components/ui/Button';
 
 const navigation = [
   {
-    label: 'Product',
+    label: 'Возможности',
     href: '#product',
   },
   {
-    label: 'Infrastructure',
+    label: 'Инфраструктура',
     href: '#infrastructure',
   },
   {
-    label: 'Pricing',
+    label: 'Тарифы',
     href: '#pricing',
-  },
-  {
-    label: 'Docs',
-    href: '#docs',
   },
 ];
 
@@ -37,6 +33,10 @@ export function Header() {
 
   const toggleMenu = () => {
     setIsMenuOpen((value) => !value);
+  };
+
+  const redirectToDashboard = () => {
+    window.location.href = 'https://admin.elysiac.fun/';
   };
 
   return (
@@ -65,7 +65,7 @@ export function Header() {
         </nav>
 
         <div className={styles.actions}>
-          <Link href="/login" className={styles.login}>
+          <Link href="https://sso.elysiac.fun/" className={styles.login}>
             Sign in
           </Link>
 
@@ -74,8 +74,9 @@ export function Header() {
             variant="primary"
             rightIcon={<FiArrowUpRight />}
             className={styles.desktopButton}
+            onClick={redirectToDashboard}
           >
-            Get started
+            Личный кабинет
           </Button>
 
           <button
@@ -113,7 +114,7 @@ export function Header() {
 
         <div className={styles.mobileActions}>
           <Link
-            href="/login"
+            href="https://sso.elysiac.fun/"
             className={styles.mobileLogin}
             onClick={closeMenu}
           >
@@ -125,8 +126,9 @@ export function Header() {
             variant="primary"
             fullWidth
             rightIcon={<FiArrowUpRight />}
+            onClick={redirectToDashboard}
           >
-            Get started
+            Личный кабинет
           </Button>
         </div>
       </div>

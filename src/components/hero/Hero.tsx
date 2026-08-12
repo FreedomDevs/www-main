@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 import { FiArrowUpRight } from 'react-icons/fi';
 
@@ -6,6 +8,10 @@ import { Button } from '@/src/components/ui/Button';
 import { HeroStats } from '@/src/components/hero/HeroStats';
 
 export function Hero() {
+  const redirectToDashboard = () => {
+    window.location.href = 'https://admin.elysiac.fun/';
+  };
+
   return (
     <section className={styles.hero}>
       <div className={styles.grid} />
@@ -30,7 +36,12 @@ export function Hero() {
           </p>
 
           <div className={styles.actions}>
-            <Button size="md" variant="primary" rightIcon={<FiArrowUpRight />}>
+            <Button
+              size="md"
+              variant="primary"
+              rightIcon={<FiArrowUpRight />}
+              onClick={redirectToDashboard}
+            >
               Начать работу
             </Button>
 
