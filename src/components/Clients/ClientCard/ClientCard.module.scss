@@ -1,0 +1,203 @@
+.card {
+  position: relative;
+
+  min-height: 430px;
+
+  padding: 42px 46px;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.055),
+    rgba(255, 255, 255, 0.018)
+  );
+
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+
+  position: absolute;
+  top: -180px;
+  right: -100px;
+
+  width: 420px;
+  height: 420px;
+
+  border-radius: 50%;
+
+  background: radial-gradient(circle, rgba(255, 70, 170, 0.1), transparent 68%);
+
+  pointer-events: none;
+}
+
+.top,
+.bottom {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.project {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo {
+  display: grid;
+  place-items: center;
+
+  width: 52px;
+  height: 52px;
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+
+  background: rgba(255, 255, 255, 0.045);
+
+  overflow: hidden;
+}
+
+.label {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: rgba(255, 255, 255, 0.32);
+
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.project h3 {
+  margin: 0;
+
+  color: var(--white);
+
+  font-family: var(--font-unbounded), sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.index {
+  color: rgba(255, 255, 255, 0.25);
+
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.quote {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  gap: 18px;
+
+  max-width: 850px;
+
+  margin: 78px auto 70px;
+}
+
+.quoteMark {
+  color: var(--primary);
+
+  font-family: Georgia, serif;
+  font-size: 64px;
+  line-height: 0.7;
+}
+
+.quote p {
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.82);
+
+  font-size: clamp(20px, 2.2vw, 28px);
+  font-weight: 400;
+  line-height: 1.55;
+  letter-spacing: -0.02em;
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  color: rgba(255, 255, 255, 0.38);
+
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.authorLine {
+  width: 30px;
+  height: 1px;
+
+  background: var(--primary);
+}
+
+.verified {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  color: rgba(255, 255, 255, 0.25);
+
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.verified span {
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  background: #63e6a5;
+
+  box-shadow: 0 0 10px rgba(99, 230, 165, 0.7);
+}
+
+@media (max-width: 640px) {
+  .card {
+    min-height: 400px;
+
+    padding: 28px 24px;
+  }
+
+  .index {
+    display: none;
+  }
+
+  .quote {
+    gap: 12px;
+
+    margin: 65px 0 60px;
+  }
+
+  .quoteMark {
+    font-size: 48px;
+  }
+
+  .quote p {
+    font-size: 18px;
+    line-height: 1.5;
+  }
+
+  .verified {
+    display: none;
+  }
+}
