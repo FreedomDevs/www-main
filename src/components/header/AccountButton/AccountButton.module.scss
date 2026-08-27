@@ -1,0 +1,48 @@
+.account {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 10px 15px;
+
+  border: 1px solid rgba(214, 220, 229, 0.1);
+  border-radius: var(--radius-sm);
+
+  background: rgba(255, 255, 255, 0.025);
+
+  color: var(--gray2);
+
+  font-family: var(--font-family);
+  font-size: 13px;
+  font-weight: 500;
+
+  text-decoration: none;
+
+  transition:
+    background 180ms ease,
+    border-color 180ms ease,
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+.account svg {
+  width: 14px;
+  height: 14px;
+
+  transition: transform 180ms ease;
+}
+
+.account:hover {
+  border-color: rgba(255, 51, 102, 0.3);
+  background: var(--primary-muted);
+
+  color: var(--white);
+
+  transform: translateY(-1px);
+}
+
+.account:hover svg {
+  color: var(--primary);
+
+  transform: translate(2px, -2px);
+}

@@ -1,0 +1,28 @@
+.note {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  margin-top: 54px;
+
+  color: rgba(255, 255, 255, 0.3);
+
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.line {
+  width: 42px;
+  height: 1px;
+
+  background: linear-gradient(90deg, var(--primary), transparent);
+}
+
+@media (max-width: 640px) {
+  .note {
+    margin-top: 38px;
+
+    font-size: 10px;
+  }
+}

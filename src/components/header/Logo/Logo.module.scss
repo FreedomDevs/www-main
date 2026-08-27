@@ -1,0 +1,30 @@
+.logo {
+  position: fixed;
+
+  top: 19px;
+  left: max(32px, calc((100vw - 1400px) / 2 + 32px));
+
+  z-index: 1000;
+
+  width: 42px;
+  height: 42px;
+
+  display: block;
+
+  img {
+    display: block;
+
+    width: 42px;
+    height: 42px;
+
+    border-radius: var(--radius-md);
+
+    object-fit: contain;
+  }
+
+  transition: all .2s ease;
+
+  &:hover {
+    transform: rotate(20deg);
+  }
+}

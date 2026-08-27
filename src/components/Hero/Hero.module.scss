@@ -1,0 +1,40 @@
+.hero {
+  width: 100%;
+
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+}
+
+.container {
+  position: relative;
+
+  width: 100%;
+  max-width: 1400px;
+  min-height: 800px;
+
+  margin: 8px auto;
+
+  overflow: hidden;
+
+  border-radius: var(--radius-lg);
+
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+@media (max-width: 900px) {
+  .container {
+    min-height: 720px;
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    min-height: 700px;
+
+    margin: 4px;
+
+    border-radius: var(--radius-md);
+  }
+}

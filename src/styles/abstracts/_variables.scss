@@ -1,15 +1,21 @@
 :root {
-  --font-family: "Inter", sans-serif;
+  --font-family: 'Inter', sans-serif;
 
-  --background: #000b14;
+  --background: #000000;
   --foreground: #171717;
 
   --primary: #ff3366;
+  --primary-hover: #ff4d78;
+  --primary-muted: rgba(255, 51, 102, 0.12);
 
   --white: #ffffff;
   --gray: #8f889e;
-
   --gray2: #d6dce5;
+
+  --surface: #1d0715;
+  --surface-hover: #240b14;
+  --border: rgba(214, 220, 229, 0.08);
+  --border-hover: rgba(214, 220, 229, 0.14);
 
   --success: #22c55e;
   --error: #ef4444;
@@ -18,4 +24,5 @@
 
   --radius-sm: 8px;
   --radius-md: 14px;
+  --radius-lg: 20px;
 }

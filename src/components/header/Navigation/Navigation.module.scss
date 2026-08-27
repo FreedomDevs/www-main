@@ -1,0 +1,28 @@
+.nav {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  display: flex;
+  align-items: center;
+  gap: 34px;
+
+  transform: translate(-50%, -50%);
+}
+
+.link {
+  color: var(--gray);
+
+  font-family: var(--font-family);
+  font-size: 14px;
+  font-weight: 500;
+
+  text-decoration: none;
+
+  transition: color 180ms ease;
+}
+
+.link:hover {
+  color: var(--white);
+}
