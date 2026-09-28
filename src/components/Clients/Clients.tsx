@@ -7,25 +7,25 @@ import styles from './Clients.module.scss';
 
 const clients = [
   {
-    name: 'ElysiumSMP',
-    logo: '/logo.svg',
+    name: 'Wolp Project',
+    logo: '/wolp-icon.png',
     comment:
-      'ElysiaCloud позволил нам сосредоточиться на развитии проекта, а не на постоянном контроле инфраструктуры.',
-    author: 'Владелец ElysiumSMP',
+      'В целом ElysiaCloud понравился, всё работает стабильно, прокси норм, с регистрацией тоже всё удобно. Если возникают какие-то вопросы, поддержка быстро отвечает. Пока только положительные впечатления :)',
+    author: 'Владелец Wolp kind',
   },
   {
-    name: 'Anivoria',
-    logo: '/logo.svg',
+    name: 'MTine',
+    logo: '/mtine-icon.png',
     comment:
-      'Платформа заметно упростила работу с инфраструктурой и позволила управлять сервисами в одном месте.',
-    author: 'Владелец Anivoria',
+      'Хорошая платформа, прокси не лагает, регистрация вообще топовая, платформа класс!)',
+    author: 'Владелец MTine darbus1',
   },
   {
-    name: 'ElysiaID',
+    name: 'DeadCats',
     logo: '/logo.svg',
     comment:
       'Единая инфраструктура ElysiaCloud отлично подходит для сервисов, которые должны работать стабильно и независимо.',
-    author: 'Команда ElysiaID',
+    author: 'Владелец DeadCats Zeronib_',
   },
 ];
 
