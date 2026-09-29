@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import Link from 'next/link';
 import { FiArrowUpRight, FiChevronDown } from 'react-icons/fi';
 
@@ -8,41 +8,51 @@ import styles from './ProductsMenu.module.scss';
 
 const productCategories = [
   {
-    title: 'Облачные решения',
+    title: 'Сервисы',
     items: [
       {
-        title: 'Cloud Hosting',
-        description: 'Облачный хостинг',
-        href: '/hosting',
+        title: 'ElysiaID',
+        description: 'Аккаунты и единая авторизация',
+        href: '/elysia-id',
       },
       {
-        title: 'Minecraft',
-        description: 'Хостинг игровых серверов',
-        href: '/minecraft',
-      },
-      {
-        title: 'Cloud Drop',
+        title: 'CloudDrop',
         description: 'Деплой статических сайтов',
         href: '/drop',
+      },
+      {
+        title: 'ElysiaClient',
+        description: 'Клиент для экосистемы Elysia',
+        href: '/client',
       },
     ],
   },
   {
-    title: 'Инструменты',
+    title: 'Инфраструктура',
     items: [
       {
-        title: 'Monitoring',
-        description: 'Мониторинг инфраструктуры',
-        href: '/monitoring',
+        title: 'ElysiaCloud',
+        description: 'Инфраструктура для Minecraft-серверов',
+        href: '/minecraft',
       },
       {
+        title: 'ElysiaGlobalProxy',
+        description: 'Глобальная сеть прокси',
+        href: '/global-proxy',
+      },
+    ],
+  },
+  {
+    title: 'Для разработчиков',
+    items: [
+      {
         title: 'API',
-        description: 'Управление через API',
+        description: 'Программное управление сервисами',
         href: '/api',
       },
       {
-        title: 'Documentation',
-        description: 'Документация платформы',
+        title: 'Документация',
+        description: 'Руководства и документация',
         href: '/docs',
       },
     ],
@@ -51,44 +61,32 @@ const productCategories = [
 
 export function ProductsMenu() {
   const [open, setOpen] = useState(false);
-  const wrapperRef = useRef<HTMLDivElement>(null);
+  const closeTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  useEffect(() => {
-    if (!open) return;
+  const openMenu = () => {
+    if (closeTimeout.current) {
+      clearTimeout(closeTimeout.current);
+      closeTimeout.current = null;
+    }
 
-    const handleClickOutside = (event: MouseEvent) => {
-      if (
-        wrapperRef.current &&
-        !wrapperRef.current.contains(event.target as Node)
-      ) {
-        setOpen(false);
-      }
-    };
+    setOpen(true);
+  };
 
-    const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') {
-        setOpen(false);
-      }
-    };
-
-    document.addEventListener('mousedown', handleClickOutside);
-    document.addEventListener('keydown', handleKeyDown);
-
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-      document.removeEventListener('keydown', handleKeyDown);
-    };
-  }, [open]);
+  const closeMenu = () => {
+    closeTimeout.current = setTimeout(() => {
+      setOpen(false);
+    }, 120);
+  };
 
   return (
     <div
-      ref={wrapperRef}
       className={`${styles.wrapper} ${open ? styles.open : ''}`}
+      onMouseEnter={openMenu}
+      onMouseLeave={closeMenu}
     >
       <button
         type="button"
         className={styles.trigger}
-        onClick={() => setOpen((value) => !value)}
         aria-expanded={open}
         aria-haspopup="menu"
       >
@@ -108,7 +106,6 @@ export function ProductsMenu() {
                 href={item.href}
                 className={styles.item}
                 role="menuitem"
-                onClick={() => setOpen(false)}
               >
                 <span>
                   <strong>{item.title}</strong>
