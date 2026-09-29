@@ -6,6 +6,7 @@ import { Footer } from '@/src/components/footer/Footer';
 import { Clients } from '@/src/components/Clients/Clients';
 import { DataGrid } from '@/src/components/DataGrid/DataGrid';
 import styles from './main.module.scss';
+import { ProductsShowcase } from '@/src/components/ProductsShowcase/ProductsShowcase';
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <DataGrid />
       <Hero />
       <Clients />
+      <ProductsShowcase />
       {/*<InfrastructureSection />*/}
       {/*<UseCasesSection />*/}
       {/*<PricingSection />*/}
