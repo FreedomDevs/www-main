@@ -5,7 +5,12 @@ import styles from './AccountButton.module.scss';
 
 export function AccountButton() {
   return (
-    <Link href="/dashboard" className={styles.account}>
+    <Link
+      href="https://sso.elysiac.fun/settings/account"
+      target="_blank"
+      rel="noreferrer"
+      className={styles.account}
+    >
       <span>Настройки аккаунта</span>
       <FiArrowUpRight />
     </Link>
