@@ -13,9 +13,9 @@ export default function Home() {
       <DataGrid />
       <Hero />
       <Clients />
-      <InfrastructureSection />
-      <UseCasesSection />
-      <PricingSection />
+      {/*<InfrastructureSection />*/}
+      {/*<UseCasesSection />*/}
+      {/*<PricingSection />*/}
       <Footer />
     </main>
   );

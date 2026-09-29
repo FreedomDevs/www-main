@@ -6,7 +6,7 @@ import styles from './AccountButton.module.scss';
 export function AccountButton() {
   return (
     <Link href="/dashboard" className={styles.account}>
-      <span>Личный кабинет</span>
+      <span>Настройки аккаунта</span>
       <FiArrowUpRight />
     </Link>
   );

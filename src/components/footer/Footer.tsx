@@ -5,34 +5,36 @@ import styles from './Footer.module.scss';
 
 const navigation = [
   {
-    title: 'Продукт',
+    title: 'Продукты',
     links: [
-      { label: 'Инфраструктура', href: '#infrastructure' },
-      { label: 'Тарифы', href: '#pricing' },
-      { label: 'Возможности', href: '#features' },
+      { label: 'ElysiaCloud', href: '/minecraft' },
+      { label: 'ElysiaID', href: '/elysia-id' },
+      { label: 'ElysiaGlobalProxy', href: '/global-proxy' },
+      { label: 'ElysiaClient', href: '/client' },
+      { label: 'CloudDrop', href: '/drop' },
     ],
   },
-  // {
-  //   title: 'Ресурсы',
-  //   links: [
-  //     { label: 'Документация', href: '/docs' },
-  //     { label: 'Статус', href: '/status' },
-  //     { label: 'Поддержка', href: '/support' },
-  //   ],
-  // },
+  {
+    title: 'Разработчикам',
+    links: [
+      { label: 'API', href: '/api' },
+      { label: 'Документация', href: '/docs' },
+    ],
+  },
+  {
+    title: 'Организация',
+    links: [
+      { label: 'GitHub', href: 'https://github.com/FreedomDevs' },
+      { label: 'Telegram', href: 'https://t.me/ElysiaCloud' },
+    ],
+  },
   {
     title: 'Документы',
     links: [
       { label: 'Пользовательское соглашение', href: '/legal/terms' },
       { label: 'Публичная оферта', href: '/legal/offer' },
-      {
-        label: 'Политика конфиденциальности',
-        href: '/legal/privacy',
-      },
-      {
-        label: 'Возврат денежных средств',
-        href: '/legal/refund',
-      },
+      { label: 'Политика конфиденциальности', href: '/legal/privacy' },
+      { label: 'Возврат денежных средств', href: '/legal/refund' },
     ],
   },
 ];
@@ -48,8 +50,8 @@ export function Footer() {
             </Link>
 
             <p>
-              Облачная инфраструктура для проектов, которым важны скорость и
-              стабильность.
+              Инфраструктура для Minecraft-проектов и сервисов, которым важны
+              стабильность, скорость и контроль.
             </p>
 
             <div className={styles.socials}>
@@ -57,10 +59,10 @@ export function Footer() {
                 href="https://github.com/FreedomDevs"
                 target="_blank"
                 rel="noreferrer"
-                className={styles.github}
+                className={styles.social}
               >
                 <FiGithub />
-                GitHub
+                <span>GitHub</span>
                 <FiArrowUpRight />
               </a>
 
@@ -68,10 +70,10 @@ export function Footer() {
                 href="https://t.me/ElysiaCloud"
                 target="_blank"
                 rel="noreferrer"
-                className={styles.github}
+                className={styles.social}
               >
                 <span className={styles.telegramIcon}>✈</span>
-                Telegram
+                <span>Telegram</span>
                 <FiArrowUpRight />
               </a>
             </div>
@@ -82,15 +84,34 @@ export function Footer() {
               <div key={group.title} className={styles.column}>
                 <span className={styles.columnTitle}>{group.title}</span>
 
-                {group.links.map((link) => (
-                  <Link
-                    key={link.label}
-                    href={link.href}
-                    className={styles.link}
-                  >
-                    {link.label}
-                  </Link>
-                ))}
+                {group.links.map((link) => {
+                  const external = link.href.startsWith('http');
+
+                  if (external) {
+                    return (
+                      <a
+                        key={link.label}
+                        href={link.href}
+                        target="_blank"
+                        rel="noreferrer"
+                        className={styles.link}
+                      >
+                        {link.label}
+                        <FiArrowUpRight />
+                      </a>
+                    );
+                  }
+
+                  return (
+                    <Link
+                      key={link.label}
+                      href={link.href}
+                      className={styles.link}
+                    >
+                      {link.label}
+                    </Link>
+                  );
+                })}
               </div>
             ))}
           </div>
